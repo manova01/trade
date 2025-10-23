@@ -1,12 +1,13 @@
-"use client"
+'use client'
 
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "./theme-toggle"
+import Image from "next/image"
 
-export function Header() {
+function Header() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
@@ -15,9 +16,7 @@ export function Header() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center">
-              <span className="text-accent-foreground font-bold text-sm">RFX</span>
-            </div>
+            <Image src="/placeholder-logo.png" alt="RFX Trading Logo" width={40} height={40} />
             <span className="font-bold text-lg hidden sm:inline">RFXTRADING</span>
           </Link>
 

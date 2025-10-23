@@ -1,3 +1,4 @@
+'use client'
 import { Zap, Shield, Users } from "lucide-react"
 
 export default function TrustedDealer() {
@@ -20,10 +21,10 @@ export default function TrustedDealer() {
   ]
 
   return (
-    <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-muted/30">
+    <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <p className="text-accent font-semibold text-sm tracking-wide mb-2">WELCOME TO RFXTRADING</p>
+          <p className="text-teal-500 font-semibold text-sm tracking-wide mb-2">WELCOME TO RFXTRADING</p>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Most Trusted Digital Asset Dealer</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             We are the most reliable, trusted, and secure cryptocurrency exchange. We exchange Bitcoin, USDT, Ethereum,
@@ -35,16 +36,19 @@ export default function TrustedDealer() {
           {features.map((feature, index) => {
             const Icon = feature.icon
             return (
-              <div key={index} className="text-center">
+              <div
+                key={index}
+                className={`text-center p-8 rounded-lg ${
+                  index === 1 ? "bg-teal-500 text-white" : "bg-white"
+                }`}
+              >
                 <div
-                  className={`w-16 h-16 mx-auto mb-4 rounded-lg flex items-center justify-center ${
-                    index === 1 ? "bg-accent text-accent-foreground" : "bg-muted text-foreground"
-                  }`}
+                  className={`w-16 h-16 mx-auto mb-4 rounded-lg flex items-center justify-center`}
                 >
                   <Icon size={32} />
                 </div>
                 <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-                <p className="text-muted-foreground">{feature.description}</p>
+                <p className="text-sm">{feature.description}</p>
               </div>
             )
           })}

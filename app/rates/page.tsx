@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import { useState, useEffect } from "react"
 import Header from "@/components/header"
@@ -21,14 +21,7 @@ export default function Rates() {
     const fetchRates = async () => {
       try {
         setLoading(true)
-        const response = await fetch(
-          "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?limit=18&convert=USD",
-          {
-            headers: {
-              "X-CMC_PRO_API_KEY": "cdde474c383d4cdda78bdbc0eb05a5b9",
-            },
-          },
-        )
+        const response = await fetch('/api/rates');
 
         if (!response.ok) throw new Error("Failed to fetch rates")
 

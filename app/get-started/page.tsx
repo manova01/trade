@@ -2,8 +2,8 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { MessageCircle, Instagram, Camera } from "lucide-react"
 import Link from "next/link"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
+import Header from "@/components/header"
+import Footer from "@/components/footer"
 
 export default function GetStartedPage() {
   return (
